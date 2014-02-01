@@ -15,18 +15,9 @@
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','analytics.js','ga');
 	
-	/*  ga('create', 'UA-45988473-3', 'solcon.com.np');
-	  ga('send', 'pageview');*/
-
 
 	
-	/*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','/analytics.js','ga');
-*/
-	
-	ga('create', 'UA-45988473-3', {
+	ga('create', 'UA-45988473-1', {
         'storage': 'none',
         'clientId':'92bf24a5-20e5-4181-9778-2835f28c52d8'
 	});
@@ -38,7 +29,9 @@
 	function sendData(){
 		try{
 			ga('send','pageview','/test-pageview');
-		}catch(e){alert(e);}
+		///or	ga('send', 'pageview', {'page': 'you page name'});
+		//or for click event    ga('send', 'event', 'button', 'click', 'your value', 4);
+		}catch(e){}
 		return false;
 	}      
 	</script>
@@ -46,7 +39,7 @@
 <body>
 <h1>Test</h1>
 
-	<input type="button" onclick="sendData()" value="Send UA Pageview..." />
+	<input type="button" onclick="sendData()" value="Click" />
 	
 </body>
 </html>
